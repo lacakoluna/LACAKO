@@ -243,7 +243,7 @@ body{
 }
 
 .section-title{
-  margin-bottom:60px;
+  margin-bottom:40px;
 }
 
 .section-title span{
@@ -300,6 +300,50 @@ body{
   padding:10px 20px;
   border-radius:50px;
   font-weight:700;
+}
+
+/* ABOUT */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.about-image{
+  position:relative;
+}
+
+.about-image img{
+  width:100%;
+  border-radius:35px;
+  object-fit:cover;
+  box-shadow:0 25px 70px rgba(0,0,0,0.65);
+  transition:0.4s ease;
+}
+
+.about-image img:hover{
+  transform:scale(1.02);
+}
+
+.about-image::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:35px;
+  background:linear-gradient(
+    to top,
+    rgba(255,60,120,0.15),
+    transparent
+  );
+  pointer-events:none;
+}
+
+.about-text p{
+  line-height:1.9;
+  color:#ccc;
+  font-size:1.1rem;
 }
 
 /* FOOTER */
@@ -370,6 +414,10 @@ body{
     flex-direction:column;
   }
 
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+
 }
 
 </style>
@@ -381,12 +429,10 @@ body{
 
 <header class="header">
 
-  <!-- LOGO -->
   <a href="#inicio" class="logo-link">
     <img src="logocako.png" alt="Logo La Cako" class="logo-img">
   </a>
 
-  <!-- MENU -->
   <nav class="nav">
     <a href="#inicio">Inicio</a>
     <a href="#shows">Shows</a>
@@ -394,26 +440,22 @@ body{
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <!-- BUTTON -->
   <a href="#" class="ticket-btn">
     🎟 Entradas
   </a>
 
 </header>
 
-<!-- HERO VIDEO -->
+<!-- HERO -->
 
 <section class="hero" id="inicio">
 
-  <!-- VIDEO -->
   <video autoplay muted loop playsinline class="hero-video">
     <source src="hero-video.mp4" type="video/mp4">
   </video>
 
-  <!-- OVERLAY -->
   <div class="overlay"></div>
 
-  <!-- CONTENT -->
   <div class="hero-content">
 
     <span class="hero-tag">
@@ -424,11 +466,11 @@ body{
       7 AÑOS<br>
       CONVIRTIENDO<br>
       HISTORIAS<br>
-      EN COMEDIA<br>
-          </h1>
+      EN COMEDIA
+    </h1>
 
     <p>
-      Standup comedy y experiencias creadas para reír, conectar y sentirse libre.
+      Stand-up comedy y experiencias creadas para reír, conectar y sentirse libre.
     </p>
 
     <div class="hero-buttons">
@@ -514,7 +556,7 @@ body{
         <h3>CHORA</h3>
 
         <p>
-          Por Chile
+          Gira por Chile
         </p>
 
         <a href="#" class="small-btn">
@@ -533,18 +575,38 @@ body{
 
 <section class="section dark-section" id="about">
 
-  <div class="section-title">
-    <span>QUIÉN SOY</span>
-    <h2>LA CAKO</h2>
+  <div class="about-grid">
+
+    <!-- FOTO -->
+
+    <div class="about-image">
+      <img src="lacako-about.jpg" alt="La Cako">
+    </div>
+
+    <!-- TEXTO -->
+
+    <div class="about-text">
+
+      <div class="section-title">
+        <span>QUIÉN SOY</span>
+        <h2>LA CAKO</h2>
+      </div>
+
+      <p>
+        Hola, soy La Cako. Comediante, productora y creadora de espacios donde la gente puede reírse, sentirse libre y conectar desde lo real.
+        <br><br>
+        Hace más de 7 años transformé mi historia en escenario, llevando una comedia honesta, emocional y cotidiana a bares, teatros y escenarios de todo Chile.
+        <br><br>
+        Mi humor nace desde las relaciones, el paso del tiempo, ser lesbiana, las contradicciones de la vida adulta y todo aquello que normalmente nos cuesta decir.
+        <br><br>
+        Porque para mí la comedia no es solo hacer reír. Es transformar experiencias reales en conexión.
+        <br><br>
+        Y mientras exista un micrófono… siempre habrá algo que decir.
+      </p>
+
+    </div>
+
   </div>
-
-  <p style="max-width:800px; line-height:1.8; color:#ccc; font-size:1.1rem;">
-    HSoy La Cako. Comediante, productora y creadora de espacios donde la gente puede reírse, sentirse libre y conectar desde lo real.
-
-Hace más de 7 años transformé mi historia en escenario, llevando una comedia honesta, emocional y cotidiana a bares, teatros y escenarios de todo Chile. Mi humor nace desde las relaciones, el paso del tiempo, ser lesbiana, las contradicciones de la vida adulta y todo aquello que normalmente nos cuesta decir.
-
-Porque para mí la comedia no es solo hacer reír. Es transformar experiencias reales en conexión. Y mientras exista un micrófono… siempre habrá algo que decir.
-  </p>
 
 </section>
 

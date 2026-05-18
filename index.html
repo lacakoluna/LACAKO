@@ -13,7 +13,9 @@
 
 <style>
 
-/* RESET */
+/* =========================
+RESET
+========================= */
 
 *{
   margin:0;
@@ -32,7 +34,9 @@ body{
   overflow-x:hidden;
 }
 
-/* HEADER */
+/* =========================
+HEADER
+========================= */
 
 .header{
   position:fixed;
@@ -56,8 +60,6 @@ body{
 
 .logo-img{
   width:80px;
-  height:auto;
-  object-fit:contain;
   transition:0.3s ease;
 }
 
@@ -65,7 +67,9 @@ body{
   transform:scale(1.05);
 }
 
-/* NAV */
+/* =========================
+NAV
+========================= */
 
 .nav{
   display:flex;
@@ -83,24 +87,70 @@ body{
   color:#ff3c78;
 }
 
-/* BUTTON */
+/* =========================
+BUTTONS
+========================= */
+
+.ticket-btn,
+.primary-btn,
+.secondary-btn,
+.small-btn{
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+  transition:0.3s ease;
+  font-weight:700;
+  border-radius:50px;
+}
 
 .ticket-btn{
   background:#ff3c78;
   color:white;
   padding:12px 24px;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:700;
-  transition:0.3s;
 }
 
 .ticket-btn:hover{
-  transform:translateY(-3px);
   background:#ff1f65;
+  transform:translateY(-3px);
 }
 
-/* HERO */
+.primary-btn{
+  background:#ff3c78;
+  color:white;
+  padding:16px 32px;
+}
+
+.primary-btn:hover{
+  background:#ff1f65;
+  transform:translateY(-3px);
+}
+
+.secondary-btn{
+  border:2px solid white;
+  color:white;
+  padding:16px 32px;
+}
+
+.secondary-btn:hover{
+  transform:translateY(-3px);
+}
+
+.small-btn{
+  display:inline-block;
+  margin-top:25px;
+  background:#ff3c78;
+  color:white;
+  padding:12px 24px;
+}
+
+.small-btn:hover{
+  background:#ff1f65;
+  transform:translateY(-2px);
+}
+
+/* =========================
+HERO
+========================= */
 
 .hero{
   position:relative;
@@ -110,7 +160,6 @@ body{
   display:flex;
   align-items:center;
   padding:0 80px;
-  background:black;
 }
 
 .hero-video{
@@ -121,7 +170,6 @@ body{
   height:100%;
   object-fit:cover;
   transform:translate(-50%, -50%);
-  z-index:1;
   filter:brightness(0.4);
 }
 
@@ -130,15 +178,14 @@ body{
   inset:0;
   background:linear-gradient(
     to right,
-    rgba(0,0,0,0.85),
-    rgba(0,0,0,0.3)
+    rgba(0,0,0,0.88),
+    rgba(0,0,0,0.35)
   );
-  z-index:2;
 }
 
 .hero-content{
   position:relative;
-  z-index:3;
+  z-index:2;
   max-width:700px;
 }
 
@@ -146,8 +193,8 @@ body{
   color:#ff3c78;
   font-weight:700;
   letter-spacing:3px;
-  display:block;
   margin-bottom:25px;
+  display:block;
 }
 
 .hero h1{
@@ -155,73 +202,24 @@ body{
   font-size:5.5rem;
   line-height:0.95;
   margin-bottom:30px;
-  text-transform:uppercase;
 }
 
 .hero p{
   font-size:1.2rem;
   line-height:1.8;
   color:#ddd;
-  max-width:600px;
   margin-bottom:40px;
 }
 
 .hero-buttons{
   display:flex;
   gap:20px;
+  flex-wrap:wrap;
 }
 
-.primary-btn,
-.secondary-btn{
-  padding:16px 32px;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:700;
-  transition:0.3s;
-}
-
-.primary-btn{
-  background:#ff3c78;
-  color:white;
-}
-
-.secondary-btn{
-  border:2px solid white;
-  color:white;
-}
-
-.primary-btn:hover,
-.secondary-btn:hover{
-  transform:translateY(-3px);
-}
-
-/* FEATURED */
-
-.featured{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-  padding:90px 80px;
-  background:#111;
-}
-
-.card{
-  background:#1b1b1b;
-  padding:40px;
-  border-radius:25px;
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-}
-
-.card h3{
-  margin-bottom:15px;
-  font-size:1.4rem;
-}
-
-/* SECTIONS */
+/* =========================
+SECTIONS
+========================= */
 
 .section{
   padding:100px 80px;
@@ -247,7 +245,37 @@ body{
   margin-top:10px;
 }
 
-/* SHOWS */
+/* =========================
+FEATURED
+========================= */
+
+.featured{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  padding:90px 80px;
+  background:#111;
+}
+
+.card{
+  background:#1b1b1b;
+  padding:40px;
+  border-radius:25px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.card h3{
+  margin-bottom:15px;
+  font-size:1.4rem;
+}
+
+/* =========================
+SHOWS
+========================= */
 
 .shows-grid{
   display:grid;
@@ -260,8 +288,8 @@ body{
   border-radius:30px;
   overflow:hidden;
   transition:0.4s ease;
-  box-shadow:0 20px 60px rgba(0,0,0,0.5);
   border:1px solid rgba(255,255,255,0.05);
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
 }
 
 .show-card:hover{
@@ -282,7 +310,7 @@ body{
   inset:0;
   background:linear-gradient(
     to top,
-    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.7),
     rgba(0,0,0,0.05)
   );
 }
@@ -292,34 +320,16 @@ body{
 }
 
 .show-content h3{
-  margin-bottom:12px;
-  font-size:2rem;
   font-family:'Anton', sans-serif;
+  font-size:2rem;
+  margin-bottom:12px;
 }
 
 .show-content p{
   color:#ccc;
-  font-size:1rem;
 }
 
-.small-btn{
-  display:inline-block;
-  margin-top:25px;
-  background:#ff3c78;
-  color:white;
-  text-decoration:none;
-  padding:12px 24px;
-  border-radius:50px;
-  font-weight:700;
-  transition:0.3s;
-}
-
-.small-btn:hover{
-  background:#ff1f65;
-  transform:translateY(-2px);
-}
-
-/* SHOW IMAGES */
+/* IMAGES */
 
 .show-18julio{
   background-image:url('./18julio.jpg');
@@ -329,7 +339,9 @@ body{
   background-image:url('./chora.jpg');
 }
 
-/* ABOUT */
+/* =========================
+ABOUT
+========================= */
 
 .about-grid{
   display:grid;
@@ -341,19 +353,110 @@ body{
 .about-image img{
   width:100%;
   border-radius:35px;
-  object-fit:cover;
   box-shadow:0 25px 70px rgba(0,0,0,0.65);
-  transition:0.4s ease;
-}
-
-.about-image img:hover{
-  transform:scale(1.02);
 }
 
 .about-text p{
   line-height:1.9;
   color:#ccc;
   font-size:1.1rem;
+}
+
+/* =========================
+BOOKING / PRENSA
+========================= */
+
+.press-intro{
+  max-width:950px;
+  margin-bottom:60px;
+}
+
+.press-intro p{
+  color:#ccc;
+  line-height:2;
+  font-size:1.05rem;
+}
+
+/* HIGHLIGHTS */
+
+.highlights-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+  margin-bottom:70px;
+}
+
+.highlight-card{
+  background:#111;
+  border:1px solid rgba(255,255,255,0.05);
+  padding:35px;
+  border-radius:28px;
+  text-align:center;
+  transition:0.4s ease;
+}
+
+.highlight-card:hover{
+  transform:translateY(-6px);
+  border-color:#ff3c78;
+}
+
+.highlight-card h3{
+  font-family:'Anton', sans-serif;
+  font-size:4rem;
+  color:#ff3c78;
+  margin-bottom:10px;
+}
+
+/* MEDIA */
+
+.media-section{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+  margin-bottom:60px;
+}
+
+.media-card{
+  background:#111;
+  border:1px solid rgba(255,255,255,0.06);
+  padding:35px;
+  border-radius:28px;
+  transition:0.4s ease;
+}
+
+.media-card:hover{
+  transform:translateY(-6px);
+  border-color:#ff3c78;
+}
+
+.media-card span{
+  color:#ff3c78;
+  font-size:0.85rem;
+  font-weight:700;
+  letter-spacing:2px;
+  display:block;
+  margin-bottom:18px;
+}
+
+.media-card h3{
+  font-family:'Anton', sans-serif;
+  font-size:2rem;
+  margin-bottom:18px;
+}
+
+.media-card p{
+  color:#bbb;
+  line-height:1.8;
+}
+
+/* QUOTE */
+
+.press-quote{
+  font-family:'Anton', sans-serif;
+  font-size:2.4rem;
+  line-height:1.2;
+  margin-bottom:60px;
+  max-width:900px;
 }
 
 /* CONTACT */
@@ -364,7 +467,9 @@ body{
   flex-wrap:wrap;
 }
 
-/* FOOTER */
+/* =========================
+FOOTER
+========================= */
 
 .footer{
   padding:70px 20px;
@@ -395,7 +500,9 @@ body{
   color:#888;
 }
 
-/* MOBILE */
+/* =========================
+MOBILE
+========================= */
 
 @media(max-width:900px){
 
@@ -428,10 +535,6 @@ body{
     padding:70px 25px;
   }
 
-  .hero-buttons{
-    flex-direction:column;
-  }
-
   .about-grid{
     grid-template-columns:1fr;
   }
@@ -442,6 +545,10 @@ body{
 
   .show-image{
     height:380px;
+  }
+
+  .press-quote{
+    font-size:1.8rem;
   }
 
 }
@@ -553,8 +660,6 @@ body{
 
   <div class="shows-grid">
 
-    <!-- SHOW 1 -->
-
     <div class="show-card">
 
       <div class="show-image show-18julio"></div>
@@ -574,8 +679,6 @@ body{
       </div>
 
     </div>
-
-    <!-- SHOW 2 -->
 
     <div class="show-card">
 
@@ -636,23 +739,95 @@ body{
 
 </section>
 
-<!-- CONTACT -->
+<!-- BOOKING -->
 
-<section class="section" id="contacto">
+<section class="section dark-section" id="contacto">
 
   <div class="section-title">
     <span>CONTACTO</span>
     <h2>BOOKING & PRENSA</h2>
   </div>
 
+  <div class="press-intro">
+
+    <p>
+      La Cako es comediante, productora y creadora de experiencias con más de 7 años de trayectoria en el stand-up comedy chileno.
+      <br><br>
+      Ha participado en escenarios, bares y teatros de distintas ciudades del país, desarrollando una propuesta auténtica, emocional y cercana.
+      <br><br>
+      Además de su trabajo en comedia, ha sido panelista en televisión en “Caja de Pandora” de La Red.
+    </p>
+
+  </div>
+
+  <div class="highlights-grid">
+
+    <div class="highlight-card">
+      <h3>+7</h3>
+      <span>Años de comedia</span>
+    </div>
+
+    <div class="highlight-card">
+      <h3>100+</h3>
+      <span>Shows realizados</span>
+    </div>
+
+    <div class="highlight-card">
+      <h3>TV</h3>
+      <span>La Red</span>
+    </div>
+
+    <div class="highlight-card">
+      <h3>LGBTQ+</h3>
+      <span>Comunidad</span>
+    </div>
+
+  </div>
+
+  <div class="media-section">
+
+    <div class="media-card">
+      <span>📺 TELEVISIÓN</span>
+      <h3>Caja de Pandora</h3>
+      <p>
+        Participación en televisión abierta como panelista.
+      </p>
+    </div>
+
+    <div class="media-card">
+      <span>🎤 STAND-UP</span>
+      <h3>Escenarios de Chile</h3>
+      <p>
+        Presentaciones en bares, teatros y eventos.
+      </p>
+    </div>
+
+    <div class="media-card">
+      <span>🔥 PRODUCTORA</span>
+      <h3>Shows & Comunidad</h3>
+      <p>
+        Creación de espacios y experiencias.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="press-quote">
+    “Más que hacer reír, La Cako transforma experiencias reales en conexión con el público.”
+  </div>
+
   <div class="contact-buttons">
 
     <a href="#" class="primary-btn">
-      WhatsApp
+      WhatsApp Booking
     </a>
 
     <a href="#" class="secondary-btn">
       Instagram
+    </a>
+
+    <a href="#" class="secondary-btn">
+      Kit de Prensa
     </a>
 
   </div>

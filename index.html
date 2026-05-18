@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>LACAKO | Stand-Up Comedy</title>
 
@@ -29,6 +29,7 @@ body{
   font-family:'Montserrat', sans-serif;
   background:#000;
   color:white;
+  overflow-x:hidden;
 }
 
 /* HEADER */
@@ -43,7 +44,7 @@ body{
   align-items:center;
   justify-content:space-between;
   z-index:1000;
-  background:rgba(0,0,0,0.75);
+  background:rgba(0,0,0,0.45);
   backdrop-filter:blur(10px);
 }
 
@@ -56,7 +57,7 @@ body{
 }
 
 .logo-img{
-  width:70px;
+  width:75px;
   height:auto;
   object-fit:contain;
   transition:0.3s ease;
@@ -89,7 +90,7 @@ body{
 .ticket-btn{
   background:#ff3c78;
   color:white;
-  padding:12px 22px;
+  padding:12px 24px;
   border-radius:50px;
   text-decoration:none;
   font-weight:700;
@@ -97,52 +98,81 @@ body{
 }
 
 .ticket-btn:hover{
-  transform:translateY(-2px);
+  transform:translateY(-3px);
+  background:#ff1f65;
 }
 
 /* HERO */
 
 .hero{
-  height:100vh;
-  background:url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1920&auto=format&fit=crop') center center/cover no-repeat;
   position:relative;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
   display:flex;
   align-items:center;
   padding:0 80px;
+  background:black;
 }
+
+/* VIDEO */
+
+.hero-video{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform:translate(-50%, -50%);
+  z-index:1;
+  filter:brightness(0.45);
+}
+
+/* OVERLAY */
 
 .overlay{
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.65);
+  background:
+  linear-gradient(
+    to right,
+    rgba(0,0,0,0.82),
+    rgba(0,0,0,0.35)
+  );
+  z-index:2;
 }
+
+/* HERO CONTENT */
 
 .hero-content{
   position:relative;
-  z-index:2;
+  z-index:3;
   max-width:700px;
 }
 
 .hero-tag{
   color:#ff3c78;
   font-weight:700;
-  letter-spacing:2px;
+  letter-spacing:3px;
   display:block;
-  margin-bottom:20px;
+  margin-bottom:25px;
 }
 
 .hero h1{
   font-family:'Anton', sans-serif;
-  font-size:5rem;
-  line-height:1;
-  margin-bottom:25px;
+  font-size:5.5rem;
+  line-height:0.95;
+  margin-bottom:30px;
+  text-transform:uppercase;
 }
 
 .hero p{
   font-size:1.2rem;
-  line-height:1.7;
+  line-height:1.8;
   color:#ddd;
-  margin-bottom:35px;
+  max-width:600px;
+  margin-bottom:40px;
 }
 
 /* BUTTONS */
@@ -154,7 +184,7 @@ body{
 
 .primary-btn,
 .secondary-btn{
-  padding:15px 30px;
+  padding:16px 32px;
   border-radius:50px;
   text-decoration:none;
   font-weight:700;
@@ -182,7 +212,7 @@ body{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:30px;
-  padding:80px;
+  padding:90px 80px;
   background:#111;
 }
 
@@ -240,10 +270,15 @@ body{
   background:#1b1b1b;
   border-radius:25px;
   overflow:hidden;
+  transition:0.3s;
+}
+
+.show-card:hover{
+  transform:translateY(-6px);
 }
 
 .show-image{
-  height:220px;
+  height:240px;
   background:url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=1200&auto=format&fit=crop') center center/cover;
 }
 
@@ -253,6 +288,7 @@ body{
 
 .show-content h3{
   margin-bottom:10px;
+  font-size:1.4rem;
 }
 
 .small-btn{
@@ -263,108 +299,13 @@ body{
   text-decoration:none;
   padding:10px 20px;
   border-radius:50px;
-}
-
-/* CLIPS */
-
-.clips-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-}
-
-.clip-box{
-  height:220px;
-  border-radius:20px;
-  background:#222;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:1.3rem;
-  font-weight:700;
-}
-
-/* COURSES */
-
-.course-box{
-  background:#1b1b1b;
-  padding:50px;
-  border-radius:30px;
-}
-
-.course-box h3{
-  margin-bottom:20px;
-  font-size:2rem;
-}
-
-.course-box p{
-  margin-bottom:30px;
-  color:#ccc;
-  line-height:1.7;
-}
-
-/* GALLERY */
-
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
-
-.gallery-item{
-  height:260px;
-  border-radius:20px;
-  background:#222;
-}
-
-/* ABOUT */
-
-.about-section{
-  background:#080808;
-}
-
-.about-content{
-  max-width:800px;
-}
-
-.about-content span{
-  color:#ff3c78;
-  font-weight:700;
-}
-
-.about-content h2{
-  font-family:'Anton', sans-serif;
-  font-size:4rem;
-  margin:20px 0;
-}
-
-.about-content p{
-  color:#ccc;
-  line-height:1.8;
-  margin-bottom:20px;
-}
-
-/* CONTACT */
-
-.contact-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-}
-
-.contact-buttons a{
-  background:#ff3c78;
-  padding:15px 30px;
-  border-radius:50px;
-  color:white;
-  text-decoration:none;
   font-weight:700;
 }
 
 /* FOOTER */
 
 .footer{
-  padding:60px 20px;
+  padding:70px 20px;
   background:black;
   text-align:center;
 }
@@ -386,6 +327,10 @@ body{
 .footer-links a{
   color:white;
   text-decoration:none;
+}
+
+.footer p{
+  color:#888;
 }
 
 /* MOBILE */
@@ -412,9 +357,17 @@ body{
     font-size:3rem;
   }
 
+  .hero p{
+    font-size:1rem;
+  }
+
   .section,
   .featured{
     padding:70px 25px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
   }
 
 }
@@ -423,6 +376,8 @@ body{
 </head>
 
 <body>
+
+<!-- HEADER -->
 
 <header class="header">
 
@@ -435,22 +390,30 @@ body{
   <nav class="nav">
     <a href="#inicio">Inicio</a>
     <a href="#shows">Shows</a>
-    <a href="#clips">Clips</a>
-    <a href="#cursos">Cursos</a>
-    <a href="#media">Media</a>
     <a href="#about">Sobre Mí</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <!-- BOTON -->
-  <a href="#" class="ticket-btn">🎟 Entradas</a>
+  <!-- BUTTON -->
+  <a href="#" class="ticket-btn">
+    🎟 Entradas
+  </a>
 
 </header>
 
+<!-- HERO VIDEO -->
+
 <section class="hero" id="inicio">
 
+  <!-- VIDEO -->
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="hero-video.mp4" type="video/mp4">
+  </video>
+
+  <!-- OVERLAY -->
   <div class="overlay"></div>
 
+  <!-- CONTENT -->
   <div class="hero-content">
 
     <span class="hero-tag">
@@ -458,10 +421,9 @@ body{
     </span>
 
     <h1>
-      7 años creando<br>
-      comedia, historias<br>
-      y escenarios donde<br>
-      la gente se siente libre.
+      7 AÑOS<br>
+      CREANDO<br>
+      COMEDIA
     </h1>
 
     <p>
@@ -470,32 +432,49 @@ body{
     </p>
 
     <div class="hero-buttons">
-      <a href="#shows" class="primary-btn">🎤 Ver Shows</a>
-      <a href="#clips" class="secondary-btn">😂 Ver Clips</a>
+
+      <a href="#shows" class="primary-btn">
+        🎤 Ver Shows
+      </a>
+
+      <a href="#" class="secondary-btn">
+        😂 Ver Clips
+      </a>
+
     </div>
 
   </div>
 
 </section>
 
+<!-- FEATURED -->
+
 <section class="featured">
 
   <div class="card">
     <h3>🎤 Próximo Show</h3>
-    <p>Descubre las próximas fechas y compra tus entradas.</p>
+    <p>
+      Descubre las próximas fechas y compra tus entradas.
+    </p>
   </div>
 
   <div class="card">
     <h3>🎓 Cursos</h3>
-    <p>Aprende stand-up comedy y encuentra tu voz.</p>
+    <p>
+      Aprende stand-up comedy y encuentra tu voz.
+    </p>
   </div>
 
   <div class="card">
     <h3>🔥 Reel Viral</h3>
-    <p>Los clips más vistos y momentos favoritos del público.</p>
+    <p>
+      Los clips más vistos y momentos favoritos del público.
+    </p>
   </div>
 
 </section>
+
+<!-- SHOWS -->
 
 <section class="section" id="shows">
 
@@ -507,34 +486,91 @@ body{
   <div class="shows-grid">
 
     <div class="show-card">
+
       <div class="show-image"></div>
 
       <div class="show-content">
+
         <h3>Si la Cako me avisan</h3>
-        <p>Santiago • Teatro</p>
+
+        <p>
+          Santiago • Teatro
+        </p>
 
         <a href="#" class="small-btn">
           Comprar Entradas
         </a>
+
       </div>
+
     </div>
 
     <div class="show-card">
+
       <div class="show-image"></div>
 
       <div class="show-content">
+
         <h3>Comedy Night</h3>
-        <p>Providencia • Comedy Club</p>
+
+        <p>
+          Providencia • Comedy Club
+        </p>
 
         <a href="#" class="small-btn">
           Comprar Entradas
         </a>
+
       </div>
+
     </div>
 
   </div>
 
 </section>
+
+<!-- ABOUT -->
+
+<section class="section dark-section" id="about">
+
+  <div class="section-title">
+    <span>QUIÉN SOY</span>
+    <h2>LA CAKO</h2>
+  </div>
+
+  <p style="max-width:800px; line-height:1.8; color:#ccc; font-size:1.1rem;">
+    Hace 7 años encontré en la comedia una forma de transformar
+    experiencias reales en conexión con el público.
+    Hoy mezclo shows, producción, humor y storytelling
+    para crear experiencias auténticas y memorables.
+  </p>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="section" id="contacto">
+
+  <div class="section-title">
+    <span>CONTACTO</span>
+    <h2>BOOKING & PRENSA</h2>
+  </div>
+
+  <div class="hero-buttons">
+
+    <a href="#" class="primary-btn">
+      WhatsApp
+    </a>
+
+    <a href="#" class="secondary-btn">
+      Instagram
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
 
 <footer class="footer">
 

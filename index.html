@@ -45,10 +45,8 @@ body{
   justify-content:space-between;
   z-index:1000;
   background:rgba(0,0,0,0.45);
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(12px);
 }
-
-/* LOGO */
 
 .logo-link{
   display:flex;
@@ -57,7 +55,7 @@ body{
 }
 
 .logo-img{
-  width:75px;
+  width:80px;
   height:auto;
   object-fit:contain;
   transition:0.3s ease;
@@ -115,8 +113,6 @@ body{
   background:black;
 }
 
-/* VIDEO */
-
 .hero-video{
   position:absolute;
   top:50%;
@@ -126,24 +122,19 @@ body{
   object-fit:cover;
   transform:translate(-50%, -50%);
   z-index:1;
-  filter:brightness(0.45);
+  filter:brightness(0.4);
 }
-
-/* OVERLAY */
 
 .overlay{
   position:absolute;
   inset:0;
-  background:
-  linear-gradient(
+  background:linear-gradient(
     to right,
-    rgba(0,0,0,0.82),
-    rgba(0,0,0,0.35)
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.3)
   );
   z-index:2;
 }
-
-/* HERO CONTENT */
 
 .hero-content{
   position:relative;
@@ -174,8 +165,6 @@ body{
   max-width:600px;
   margin-bottom:40px;
 }
-
-/* BUTTONS */
 
 .hero-buttons{
   display:flex;
@@ -243,7 +232,7 @@ body{
 }
 
 .section-title{
-  margin-bottom:40px;
+  margin-bottom:50px;
 }
 
 .section-title span{
@@ -254,7 +243,7 @@ body{
 
 .section-title h2{
   font-family:'Anton', sans-serif;
-  font-size:3rem;
+  font-size:3.5rem;
   margin-top:10px;
 }
 
@@ -262,44 +251,82 @@ body{
 
 .shows-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
+  grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+  gap:35px;
 }
 
 .show-card{
-  background:#1b1b1b;
-  border-radius:25px;
+  background:#111;
+  border-radius:30px;
   overflow:hidden;
-  transition:0.3s;
+  transition:0.4s ease;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+  border:1px solid rgba(255,255,255,0.05);
 }
 
 .show-card:hover{
-  transform:translateY(-6px);
+  transform:translateY(-8px);
 }
 
 .show-image{
-  height:240px;
-  background:url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=1200&auto=format&fit=crop') center center/cover;
+  height:520px;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  position:relative;
+}
+
+.show-image::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.05)
+  );
 }
 
 .show-content{
-  padding:25px;
+  padding:30px;
 }
 
 .show-content h3{
-  margin-bottom:10px;
-  font-size:1.4rem;
+  margin-bottom:12px;
+  font-size:2rem;
+  font-family:'Anton', sans-serif;
+}
+
+.show-content p{
+  color:#ccc;
+  font-size:1rem;
 }
 
 .small-btn{
   display:inline-block;
-  margin-top:20px;
+  margin-top:25px;
   background:#ff3c78;
   color:white;
   text-decoration:none;
-  padding:10px 20px;
+  padding:12px 24px;
   border-radius:50px;
   font-weight:700;
+  transition:0.3s;
+}
+
+.small-btn:hover{
+  background:#ff1f65;
+  transform:translateY(-2px);
+}
+
+/* SHOW IMAGES */
+
+.show-18julio{
+  background-image:url('./18julio.jpg');
+}
+
+.show-chora{
+  background-image:url('./chora.jpg');
 }
 
 /* ABOUT */
@@ -309,10 +336,6 @@ body{
   grid-template-columns:1fr 1fr;
   gap:70px;
   align-items:center;
-}
-
-.about-image{
-  position:relative;
 }
 
 .about-image img{
@@ -327,23 +350,18 @@ body{
   transform:scale(1.02);
 }
 
-.about-image::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  border-radius:35px;
-  background:linear-gradient(
-    to top,
-    rgba(255,60,120,0.15),
-    transparent
-  );
-  pointer-events:none;
-}
-
 .about-text p{
   line-height:1.9;
   color:#ccc;
   font-size:1.1rem;
+}
+
+/* CONTACT */
+
+.contact-buttons{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
 }
 
 /* FOOTER */
@@ -398,7 +416,7 @@ body{
   }
 
   .hero h1{
-    font-size:3rem;
+    font-size:3.2rem;
   }
 
   .hero p{
@@ -416,6 +434,14 @@ body{
 
   .about-grid{
     grid-template-columns:1fr;
+  }
+
+  .shows-grid{
+    grid-template-columns:1fr;
+  }
+
+  .show-image{
+    height:380px;
   }
 
 }
@@ -518,7 +544,16 @@ body{
 
 <!-- SHOWS -->
 
- <!-- SHOW 1 -->
+<section class="section" id="shows">
+
+  <div class="section-title">
+    <span>LA COMEDIA</span>
+    <h2>Próximos Shows</h2>
+  </div>
+
+  <div class="shows-grid">
+
+    <!-- SHOW 1 -->
 
     <div class="show-card">
 
@@ -572,13 +607,9 @@ body{
 
   <div class="about-grid">
 
-    <!-- FOTO -->
-
     <div class="about-image">
       <img src="lacako-about.jpg" alt="La Cako">
     </div>
-
-    <!-- TEXTO -->
 
     <div class="about-text">
 
@@ -614,7 +645,7 @@ body{
     <h2>BOOKING & PRENSA</h2>
   </div>
 
-  <div class="hero-buttons">
+  <div class="contact-buttons">
 
     <a href="#" class="primary-btn">
       WhatsApp
